@@ -35,4 +35,4 @@ jobs:
         with:
           name: Exec file
           path: |
-            Hello
+            TestCompile/Hello
