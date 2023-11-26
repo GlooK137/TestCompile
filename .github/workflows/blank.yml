@@ -25,11 +25,11 @@ jobs:
       - name: Git clone my repo
         run: git clone https://github.com/GlooK137/TestCompile
       - name: Download ndk
-        run: wget https://dl.google.com/android/repository/android-ndk-r26b-linux.zip && unzip TestCompile/android-ndk-r26b-linux.zip
+        run: cd TestCompile && wget https://dl.google.com/android/repository/android-ndk-r26b-linux.zip && unzip android-ndk-r26b-linux.zip
       - name: Get dir files
         run: ls -al
       - name: Build
-        run: TestCompile/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/bin/armv7a-linux-androideabi21-clang++ TestCompile/main.cpp -o Hello 
+        run: cd TestCompile && android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/bin/armv7a-linux-androideabi21-clang++ main.cpp -o Hello 
       - name: Archive production artifacts
         uses: actions/upload-artifact@v3
         with:
