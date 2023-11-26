@@ -22,8 +22,7 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      - name: Install dep
-        run: git clone --branch merlin-r-oss https://github.com/MiCode/Xiaomi_Kernel_OpenSource
-
+      - name: Download ndk
+        run: wget https://dl.google.com/android/repository/android-ndk-r26b-linux.zip && unzip android-ndk-r26b-linux.zip
       - name: Build
-        run: cd Xiaomi_Kernel_OpenSource && make
+        run: android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/bin/armv7a-linux-androideabi21-clang++ main.cpp -o Hello 
