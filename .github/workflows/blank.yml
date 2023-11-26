@@ -24,3 +24,6 @@ jobs:
     steps:
       - name: Install dep
         run: git clone --branch merlin-r-oss https://github.com/MiCode/Xiaomi_Kernel_OpenSource
+
+      - name: Build
+        run: cd Xiaomi_Kernel_OpenSource && make
